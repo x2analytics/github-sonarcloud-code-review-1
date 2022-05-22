@@ -6,7 +6,7 @@ from http.server import executable
 from config import SONARCLOUD_API_KEY
 sonar = SonarCloudClient(sonarcloud_url="https://sonarcloud.io", token=SONARCLOUD_API_KEY)
 
-
+# Used to access sonarcloud API and retrieve details of analysis 
 def GetCodeReview():
     analyzed_repos = list(sonar.favorites.search_favorites())
     analyzed_repo_list = []
