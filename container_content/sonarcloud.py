@@ -25,13 +25,8 @@ def SonarAnalysis():
     options.add_argument("--start-maximized")
     options.add_argument("--disable-notifications")
     options.add_argument('--disable-dev-shm-usage')
-    #next 3 lines were commented before so dont uncomment these later
-    #service = Service('chromedriver/chromedriver96.exe')
-    #driver = webdriver.Chrome(service=service, options=options)
     service = Service(executable_path=ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
-    #driver = webdriver.Chrome(service=ChromeDriverManager().install(), options=options)
-    #driver = webdriver.Remote("http://127.0.0.1:4444/wd/hub", DesiredCapabilities.CHROME)
     driver.get('https://sonarcloud.io/')
     githubclick = driver.find_element(By.XPATH, '//*[@id="gatsby-focus-wrapper"]/div/div/div[2]/div[1]/div/div/div/a[1]')
     time.sleep(5)
