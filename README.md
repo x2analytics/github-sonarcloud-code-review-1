@@ -23,7 +23,7 @@ Before cloning the project if an App password has not already be created, go to 
 
 - cd into container_content, this folder contains required files and config to build up a docker image
 
-- copy `config.py.example` to `config.py` and **modify** the file to include your credentials. Refer to the steps below for accessing those credentials. 
+- copy contents in `config.py.example` to a newly created `config.py` and **modify** the file to include your credentials. Refer to the steps below for accessing those credentials. 
 
 - Go onto https://sonarcloud.io/ and login with your GitHub account. After logging in, click the "Account" icon on the top right, go to "My Account", select "Security" at the top, and generate a new token. You can give this token any name. Copy this token and input the token into `config.py` where it says "SONARCLOUD_API_KEY".
     Note it must be of the form `SONARCLOUD_API_KEY` = "<the key>"
@@ -50,9 +50,9 @@ Before cloning the project if an App password has not already be created, go to 
 
 		docker run -i -t -d -p 8080:8080 --name python_code_review python_code_review 
 
-the container should run the Python app at `http://localhost:8080` test with `curl -o - http://localhost:8080/ppcad`
+the container should run the Python app at `http://localhost:8080` test with `curl -o - http://localhost:8080/username`
 
-- if curl fails then try http://localhost:8080/ppcad` from web browser
+- if curl fails then try http://localhost:8080/username` from web browser
 
 - to stop the container
 
@@ -70,11 +70,11 @@ the container should run the Python app at `http://localhost:8080` test with `cu
 
 ## API Paths
 
-### ID only (global rank)
+### Username only
 
 **GET /<string:username>**
 
-e.g. `http://localhost:8080/ppcad`
+e.g. `http://localhost:8080/username`
 
 ##### Sample Response
 
